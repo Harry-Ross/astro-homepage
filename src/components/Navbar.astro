@@ -1,0 +1,33 @@
+---
+const navItems = [
+  {
+    name: 'Home',
+    link: '/'
+  },
+  {
+    name: 'Blog',
+    link: '/blog'
+  },
+  {
+    name: 'About',
+    link: '/about'
+  },
+  {
+    name: 'Twitter',
+    link: 'https://twitter.com/harryrossdev'
+  }
+]
+
+---
+
+<nav class="w-full inline-flex bg-gray-500">
+  {navItems.map(item => {
+    return (
+      <a href={item.link} class="p-4 m-1 bg-gray-400">
+        <span class="">
+          {item.name}
+        </span>
+      </a>
+    );
+  })}
+</nav>
