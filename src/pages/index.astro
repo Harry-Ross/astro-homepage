@@ -1,14 +1,29 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "@astrojs/image/components";
+
+import portrait from "../../public/harry-portrait.jpg";
 ---
 
 <BaseLayout>
 	<section class="bg-gradient-to-b from-[#4F7D8B] h-screen">
-		<div class="mx-auto">Testing</div>
+		<div
+			class="flex flex-row mx-auto h-96 w-[40rem] bg-[#1E1E1E] rounded-lg border-[#9B9B9B] border-[1px] p-8"
+		>
+			<div class="pr-8">
+				<h1 class="text-5xl font-bold tracking-wider">Hi there, I'm Harry</h1>
+				<h4>Full-Stack .NET/JavaScript Developer</h4>
+			</div>
+			<div class="px-8">
+				<Image
+					class="rounded-full"
+					src={portrait}
+					alt="Harry's face"
+					width={200}
+					height={200}
+				/>
+			</div>
+		</div>
 	</section>
 	<section>
 		<h1>My Projects</h1>
