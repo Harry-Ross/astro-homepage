@@ -1,9 +1,9 @@
 ---
-import '@fontsource/inter';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import "@fontsource/inter";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!DOCTYPE html>
@@ -12,13 +12,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			body {
-				font-family: 'Inter', sans-serif;
+				font-family: "Inter", sans-serif;
 			}
 		</style>
 	</head>
-	<body>
+	<body class="bg-zinc-800 text-white">
 		<Header title={SITE_TITLE} />
-		<main class="max-w-3xl mx-auto p-8 border-2 rounded-md">
+		<main class="">
 			<slot />
 		</main>
 		<Footer />
