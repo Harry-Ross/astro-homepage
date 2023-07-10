@@ -6,26 +6,33 @@ import portrait from "../../public/harry-portrait.jpg";
 ---
 
 <BaseLayout>
-	<section class="bg-gradient-to-b from-[#4F7D8B] h-screen">
+	{
+		/* Maybe should be h-screen, but not sure how to do the margin for the header block */
+	}
+	<section class="flex bg-gradient-to-b from-[#4F7D8B] h-[48rem] mb-12">
 		<div
-			class="flex flex-row mx-auto h-96 w-[40rem] bg-[#1E1E1E] rounded-lg border-[#9B9B9B] border-[1px] p-8"
+			class="mt-36 md:flex md:flex-row mx-auto h-96 w-[56rem] bg-[#1E1E1E] rounded-lg border-[#9B9B9B] border-[1px] p-8"
 		>
-			<div class="pr-8">
-				<h1 class="text-5xl font-bold tracking-wider">Hi there, I'm Harry</h1>
-				<h4>Full-Stack .NET/JavaScript Developer</h4>
+			<div class="md:w-64 flex flex-col justify-center">
+				<h1 class="text-5xl font-bold tracking-wider pb-4 leading-relaxed">
+					Hi there, I'm Harry
+				</h1>
+				<h4 class="italic text-xl pb-4 md:pb-0 text-gray-400 leading-relaxed">
+					Full-Stack .NET/JavaScript Developer
+				</h4>
 			</div>
-			<div class="px-8">
+			<div class="flex items-center justify-end grow">
 				<Image
-					class="rounded-full"
+					class="rounded-full md:float-right mx-auto md:mx-0"
 					src={portrait}
 					alt="Harry's face"
-					width={200}
-					height={200}
+					width={250}
+					height={250}
 				/>
 			</div>
 		</div>
 	</section>
-	<section>
-		<h1>My Projects</h1>
+	<section class="mx-auto max-w-6xl mt-12">
+		<h1 class="text-4xl font-bold">My Projects</h1>
 	</section>
 </BaseLayout>
