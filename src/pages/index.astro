@@ -10,6 +10,7 @@ const projectsCollection = await getCollection("projects");
 const projects = projectsCollection.map((project) => ({
 	name: project.data.name,
 	description: project.data.description,
+	url: `/projects/${project.slug}`
 }));
 ---
 
@@ -45,8 +46,9 @@ const projects = projectsCollection.map((project) => ({
 		{projects.map(data => (
 			<article class="p-8 grid grid-cols-2 gap-4 w-full bg-[#454545] border-[#9B9B9B] border-2 rounded-lg">
 				<div class="col-span-1">
-					<h2 class="pb-5 text-4xl font-bold tracking-wider">{data.name}</h1>
-					<p class="text-xl">{data.description}</p>
+					<h2 class="py-2 text-4xl font-bold tracking-wider">{data.name}</h1>
+					<p class="py-4 text-xl">{data.description}</p>
+					<p class="text-lg"><a class="underline" href={data.url}>Read more</a></p>
 				</div>	
 				<div class="col-span-1">
 
