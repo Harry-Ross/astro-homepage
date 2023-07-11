@@ -44,7 +44,9 @@ const projects = projectsCollection.map((project) => ({
 	<section class="mx-auto max-w-6xl mt-12">
 		<h1 class="text-5xl font-bold pb-12">My Projects</h1>
 		{projects.map(data => (
-			<article class="p-8 grid grid-cols-2 gap-4 w-full bg-[#454545] border-[#9B9B9B] border-2 rounded-lg">
+			<article 
+			style={"background: linear-gradient(180deg, #454545 45.83%, rgba(140, 140, 140, 0.41) 100%);"}
+			class="p-8 md:grid md:grid-cols-2 gap-4 w-full border-[#9B9B9B] border-2 rounded-2xl">
 				<div class="col-span-1">
 					<h2 class="py-2 text-4xl font-bold tracking-wider">{data.name}</h1>
 					<p class="py-4 text-xl">{data.description}</p>
