@@ -16,8 +16,20 @@ const blog = defineCollection({
 		tags: z. 
 			array(z.string())
 			.optional(),
-		thumbnail: z.string().optional(),
+		thumbnail: z.string().url().optional(),
 	}),
 });
 
-export const collections = { blog };
+const projects = defineCollection({
+	schema: z.object({
+		name: z.string(),
+		description: z.string(),
+		date: z
+			.string()
+			.or(z.date())
+			.transform((val) => new Date(val)),
+		thumbnail: z.string().url().optional(),
+	}),
+});
+
+export const collections = { blog, projects };

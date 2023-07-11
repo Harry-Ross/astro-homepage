@@ -3,6 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "@astrojs/image/components";
 
 import portrait from "../../public/harry-portrait.jpg";
+import { getCollection } from "astro:content";
+
+const projectsCollection = await getCollection("projects");
+
+const projects = projectsCollection.map((project) => ({
+	name: project.data.name,
+	description: project.data.description,
+}));
 ---
 
 <BaseLayout>
@@ -33,6 +41,18 @@ import portrait from "../../public/harry-portrait.jpg";
 		</div>
 	</section>
 	<section class="mx-auto max-w-6xl mt-12">
-		<h1 class="text-4xl font-bold">My Projects</h1>
+		<h1 class="text-5xl font-bold pb-12">My Projects</h1>
+		{projects.map(data => (
+			<article class="p-8 grid grid-cols-2 gap-4 w-full bg-[#454545] border-[#9B9B9B] border-2 rounded-lg">
+				<div class="col-span-1">
+					<h2 class="pb-5 text-4xl font-bold tracking-wider">{data.name}</h1>
+					<p class="text-xl">{data.description}</p>
+				</div>	
+				<div class="col-span-1">
+
+				</div>
+			</article>
+		))}
+		
 	</section>
 </BaseLayout>
