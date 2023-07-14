@@ -12,6 +12,15 @@ const projects = projectsCollection.map((project) => ({
 	description: project.data.description,
 	url: `/projects/${project.slug}`
 }));
+
+const blogCollection = await getCollection("blog");
+
+const blogs = blogCollection.map((blog) => ({
+	title: blog.data.title,
+	description: blog.data.description,
+	url: `/blog/${blog.slug}`
+}));
+
 ---
 
 <BaseLayout>
@@ -59,4 +68,20 @@ const projects = projectsCollection.map((project) => ({
 		))}
 		
 	</section>
+
+	<section class="mx-auto max-w-6xl mt-12">
+		<h1 class="text-5xl font-bold pb-12">Blog</h1>
+		<div class="md:grid md:grid-cols-2 gap-4">
+			{blogs.map(blog => 
+				<article 
+				style={"background: linear-gradient(180deg, #454545 45.83%, rgba(140, 140, 140, 0.41) 100%);"}
+				class="p-8 w-full border-[#9B9B9B] border-2 rounded-2xl">
+					<div class="col-span-1">
+						<h2 class="py-2 text-4xl font-bold tracking-wider">{blog.title}</h1>
+						<p class="py-4 text-xl">{blog.description}</p>
+						<p class="text-lg"><a class="underline" href={blog.url}>Read more</a></p>
+					</div>
+				</article>
+			)}
+		
 </BaseLayout>
