@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
 import { Image } from "@astrojs/image/components";
 
 import portrait from "../../public/harry-portrait.jpg";
@@ -24,19 +25,30 @@ const blogs = blogCollection.map((blog) => ({
 ---
 
 <BaseLayout>
+	<script>
+		import { animate } from "motion";
+
+		const element = document.querySelectorAll(".intro-box");
+
+		animate(
+			element,
+			{ opacity: [0, 1], transform: "none" },
+			{ duration: 0.8, easing: "ease-out" }
+		);
+	</script>
 	{
 		/* Maybe should be h-screen, but not sure how to do the margin for the header block */
 	}
 	<section class="flex bg-gradient-to-b from-[#4F7D8B] h-[48rem] mb-12">
 		<div
-			class="mt-36 md:flex md:flex-row mx-auto h-96 w-[56rem] bg-[#1E1E1E] rounded-lg border-[#9B9B9B] border-[1px] p-8"
+			class="intro-box mt-36 md:flex md:flex-row mx-auto h-96 w-[56rem] bg-[#1E1E1E] rounded-lg border-[#9B9B9B] border-[1px] p-16"
 		>
 			<div class="md:w-64 flex flex-col justify-center">
 				<h1 class="text-5xl font-bold tracking-wider pb-4 leading-relaxed">
 					Hi there, I'm Harry
 				</h1>
 				<h4 class="italic text-xl pb-4 md:pb-0 text-gray-400 leading-relaxed">
-					Full-Stack .NET/JavaScript Developer
+					Full-Stack .NET <br />JavaScript Developer
 				</h4>
 			</div>
 			<div class="flex items-center justify-end grow">
@@ -44,13 +56,13 @@ const blogs = blogCollection.map((blog) => ({
 					class="rounded-full md:float-right mx-auto md:mx-0"
 					src={portrait}
 					alt="Harry's face"
-					width={250}
-					height={250}
+					width={300}
+					height={300}
 				/>
 			</div>
 		</div>
 	</section>
-	<section class="mx-auto max-w-6xl mt-12">
+	<Section>
 		<h1 class="text-5xl font-bold pb-12">My Projects</h1>
 		{projects.map(data => (
 			<article 
@@ -67,9 +79,9 @@ const blogs = blogCollection.map((blog) => ({
 			</article>
 		))}
 		
-	</section>
+	</Section>
 
-	<section class="mx-auto max-w-6xl mt-12">
+	<Section>
 		<h1 class="text-5xl font-bold pb-12">Blog</h1>
 		<div class="md:grid md:grid-cols-2 gap-4">
 			{blogs.map(blog => 
@@ -83,5 +95,7 @@ const blogs = blogCollection.map((blog) => ({
 					</div>
 				</article>
 			)}
+		</div>
+	</Section>
 		
 </BaseLayout>
