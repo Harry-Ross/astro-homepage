@@ -18,8 +18,9 @@ const posts = (await getCollection('blog')).sort(
 							<h2 class="text-4xl font-bold">{post.data.title}</h2>
 							<FormattedDate date={post.data.date} />
 							{post.data.thumbnail && <img width={720} height={360} src={post.data.thumbnail} alt="" />}
-							<p class="text-xl">{post.data.description}</p>
+							<p class="text-xl my-4">{post.data.description}</p>
 						</article>
+						<hr class="border-slate-400" />
 					</a>
 				))
 			}
