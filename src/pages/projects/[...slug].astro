@@ -1,21 +1,29 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
+import { CollectionEntry, getCollection } from "astro:content";
+import Section from "../../components/Section.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('projects');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
+	const projects = await getCollection("projects");
+	return projects.map((project) => ({
+		params: { slug: project.slug },
+		props: project,
 	}));
 }
-type Props = CollectionEntry<'projects'>;
+type Props = CollectionEntry<"projects">;
 
 const project = Astro.props;
 const { Content } = await project.render();
+
+const { name, date } = project.data;
 ---
 
 <BaseLayout>
-  <h1>{project.data.title}</h1>
-  <Content />
+	<Section class="prose prose-invert max-w-2xl">
+		<h1 class="text-5xl">{name}</h1>
+		<FormattedDate date={date} />
+		<hr />
+		<Content />
+	</Section>
 </BaseLayout>
