@@ -8,5 +8,6 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://harry.is-a.dev',
+  base: "/",
   integrations: [mdx(), sitemap(), tailwind(), image()]
 });
