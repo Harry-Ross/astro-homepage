@@ -1,39 +1,39 @@
 ---
 const navItems = [
-  {
-    name: "Home",
-    link: "/",
-  },
-  {
-    name: "Blog",
-    link: "/blog",
-  },
-  {
-    name: "About",
-    link: "/about",
-  },
-  {
-    name: "GitHub",
-    link: "https://github.com/Harry-Ross",
-  },
+	{
+		name: "Home",
+		link: "/",
+	},
+	{
+		name: "Blog",
+		link: "/blog",
+	},
+	{
+		name: "About",
+		link: "/about",
+	},
+	{
+		name: "GitHub",
+		link: "https://github.com/Harry-Ross",
+	},
 ];
 ---
 
 <nav
-  class="w-full inline-flex border-b-[1px] p-5 tracking-[0.35em] bg-zinc-900"
+	class="w-full inline-flex border-b-[1px] p-5 tracking-[0.35em] bg-zinc-900"
 >
-  <div class="flex-1">
-    <h1 class="text-white pl-6 uppercase font-semibold">Harry Ross</h1>
-  </div>
-  <div class="flex-none flex items-center">
-    {
-      navItems.map((item) => {
-        return (
-          <a href={item.link} class="px-5">
-            <span class="uppercase font-light text-white">{item.name}</span>
-          </a>
-        );
-      })
-    }
-  </div>
+	<div class="flex-1">
+		<span class="text-white pl-6 uppercase font-semibold">Harry Ross</span>
+	</div>
+	<div class="flex-none flex items-center">
+		{
+			navItems.map((item) => {
+				return (
+					<a href={item.link} class="px-5">
+						<span class="uppercase font-light text-white">{item.name}</span>
+					</a>
+				);
+			})
+		}
+	</div>
 </nav>
