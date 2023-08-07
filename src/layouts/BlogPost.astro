@@ -9,18 +9,5 @@ const { title, description, date, updatedDate, thumbnail } = Astro.props;
 ---
 
 <BaseLayout>
-	<article>
-		{thumbnail && <img width={720} height={360} src={thumbnail} alt="" />}
-		<h1 class="title">{title}</h1>
-		<FormattedDate date={date} />
-		{
-			updatedDate && (
-				<div class="last-updated-on">
-					Last updated on <FormattedDate date={updatedDate} />
-				</div>
-			)
-		}
-		<hr />
-		<slot />
-	</article>
+	
 </BaseLayout>
