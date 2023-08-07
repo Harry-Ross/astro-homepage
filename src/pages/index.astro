@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/Card.astro"
+import Card from "../components/Card.astro";
 import Section from "../components/Section.astro";
 import { Image } from "@astrojs/image/components";
 
@@ -12,17 +12,19 @@ const projectsCollection = await getCollection("projects");
 const projects = projectsCollection.map((project) => ({
 	name: project.data.name,
 	description: project.data.description,
-	url: `/projects/${project.slug}`
+	url: `/projects/${project.slug}`,
 }));
 
 const blogCollection = await getCollection("blog");
 
-const blogs = blogCollection.map((blog) => ({
-	title: blog.data.title,
-	description: blog.data.description,
-	url: `/blog/${blog.slug}`
-}));
-
+const blogs = blogCollection
+	.map((blog) => ({
+		title: blog.data.title,
+		description: blog.data.description,
+		url: `/blog/${blog.slug}`,
+		date: blog.data.date,
+	}))
+	.sort((a, b) => b.date.valueOf() - a.date.valueOf());
 ---
 
 <BaseLayout>
@@ -65,32 +67,40 @@ const blogs = blogCollection.map((blog) => ({
 	</section>
 	<Section>
 		<h1 class="text-5xl font-bold pb-12">My Projects</h1>
-		{projects.map(data => (
-			<Card class="md:grid md:grid-cols-2 gap-4">
-				<div class="col-span-1">
-					<h2 class="py-2 text-4xl font-bold tracking-wider">{data.name}</h1>
-					<p class="py-4 text-xl">{data.description}</p>
-					<p class="text-lg"><a class="underline" href={data.url}>Read more</a></p>
-				</div>	
-				<div class="col-span-1">
-
-				</div>
-			</Card>
-		))}
-		
+		{
+			projects.map((data) => (
+				<Card class="md:grid md:grid-cols-2 gap-4">
+					<div class="col-span-1">
+						<h2 class="py-2 text-4xl font-bold tracking-wider">{data.name}</h2>
+						<p class="py-4 text-xl">{data.description}</p>
+						<p class="text-lg">
+							<a class="underline" href={data.url}>
+								Read more
+							</a>
+						</p>
+					</div>
+					<div class="col-span-1"></div>
+				</Card>
+			))
+		}
 	</Section>
 
 	<Section>
 		<h1 class="text-5xl font-bold pb-12">Blog</h1>
 		<div class="md:grid md:grid-cols-2 gap-4">
-			{blogs.map(blog => 
-				<Card>
-					<h2 class="py-2 text-4xl font-bold tracking-wider">{blog.title}</h1>
-					<p class="py-4 text-xl">{blog.description}</p>
-					<p class="text-lg"><a class="underline" href={blog.url}>Read more</a></p>
-				</Card>
-			)}
+			{
+				blogs.map((blog) => (
+					<Card>
+						<h2 class="py-2 text-4xl font-bold tracking-wider">{blog.title}</h2>
+						<p class="py-4 text-xl">{blog.description}</p>
+						<p class="text-lg">
+							<a class="underline" href={blog.url}>
+								Read more
+							</a>
+						</p>
+					</Card>
+				))
+			}
 		</div>
 	</Section>
-		
 </BaseLayout>
