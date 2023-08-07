@@ -29,7 +29,7 @@ const projects = defineCollection({
 			.string()
 			.or(z.date())
 			.transform((val) => new Date(val)),
-		thumbnail: z.string().url().optional(),
+		thumbnail: z.string().optional(),
 	}),
 });
 

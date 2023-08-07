@@ -1,8 +1,9 @@
 ---
 name: 'Wave'
 subtitle: A music discovery social platform
-description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta elit eu nisl eleifend, non volutpat odio commodo. Ut bibendum est at feugiat sagittis. Sed venenatis ultrices dui, quis blandit tellus porta a. Nam ut turpis et sem faucibus tempor nec nec mi. Aenean aliquam ipsum in metus euismod elementum.'
+description: 'Wave is a music-sharing social network built with the MERN stack where you can log and review albums and singles. There are dedicated artist and album pages to allow users to discover new music. There is also following/follower functionality, to allow users to follow their friends, and discover others with similar music taste.'
 date: 'Oct 06 2022'
+thumbnail: '/images/wave_homepage.gif'
 ---
 
 The (longer) write-up for this project can be found [here](/2020-10-05-wave-update).
