@@ -32,7 +32,7 @@ const blogs = blogCollection
 	<script>
 		import { animate } from "motion";
 
-		const element = document.querySelectorAll(".intro-box");
+		const element = document.querySelectorAll("#intro-box");
 
 		animate(
 			element,
@@ -45,13 +45,14 @@ const blogs = blogCollection
 	}
 	<section class="flex bg-gradient-to-b from-[#4F7D8B] h-[48rem] mb-12">
 		<div
-			class="intro-box mt-36 md:flex md:flex-row mx-auto h-[25rem] w-[56rem] bg-[#1E1E1E] rounded-3xl border-[#9B9B9B] border-[1px] p-16"
+			class="mt-36 flex max-md:flex-col md:flex-row mx-auto md:h-[25rem] w-[56rem] bg-[#1E1E1E] rounded-3xl border-[#9B9B9B] border-[1px] p-16"
+			id="intro-box"
 		>
 			<div class="md:w-64 flex flex-col justify-center">
 				<h1 class="text-5xl font-black pb-4 leading-relaxed">
 					Hi there, I'm Harry
 				</h1>
-				<h4 class="italic text-2xl pb-4 md:pb-0 text-gray-400">
+				<h4 class="italic text-2xl pb-4 text-gray-400">
 					Full-Stack .NET <br />JavaScript Developer
 				</h4>
 			</div>
