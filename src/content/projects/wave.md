@@ -6,7 +6,7 @@ date: 'Oct 06 2022'
 thumbnail: '/images/wave_homepage.gif'
 ---
 
-The (longer) write-up for this project can be found [here](/2020-10-05-wave-update).
+The (longer) write-up for this project can be found [here](/blog/wave-update).
 # The Idea
 Wave is a music-sharing social network built with the MERN stack that allows for
 the logging and reviewing of albums and singles. You can browse artist/album pages
