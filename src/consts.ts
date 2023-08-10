@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = 'Harry Ross - Full Stack Developer';
 export const SITE_DESCRIPTION = "Hi I'm Harry - a full stack .NET developer from Sydney, Australia. I'm passionate about building great software and learning new things.";
-export const SITE_IMAGE = "/placeholder-social.jpg"
+export const SITE_IMAGE = "/social-image.png"

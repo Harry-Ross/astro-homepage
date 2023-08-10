@@ -45,13 +45,13 @@ const blogs = blogCollection
 	}
 	<section class="flex bg-gradient-to-b from-[#4F7D8B] h-[48rem] mb-12">
 		<div
-			class="intro-box mt-36 md:flex md:flex-row mx-auto h-96 w-[56rem] bg-[#1E1E1E] rounded-lg border-[#9B9B9B] border-[1px] p-16"
+			class="intro-box mt-36 md:flex md:flex-row mx-auto h-[25rem] w-[56rem] bg-[#1E1E1E] rounded-3xl border-[#9B9B9B] border-[1px] p-16"
 		>
 			<div class="md:w-64 flex flex-col justify-center">
-				<h1 class="text-5xl font-bold tracking-wider pb-4 leading-relaxed">
+				<h1 class="text-5xl font-black pb-4 leading-relaxed">
 					Hi there, I'm Harry
 				</h1>
-				<h4 class="italic text-xl pb-4 md:pb-0 text-gray-400 leading-relaxed">
+				<h4 class="italic text-2xl pb-4 md:pb-0 text-gray-400">
 					Full-Stack .NET <br />JavaScript Developer
 				</h4>
 			</div>
@@ -67,7 +67,7 @@ const blogs = blogCollection
 		</div>
 	</section>
 	<Section>
-		<h1 class="text-5xl font-bold pb-12">My Projects</h1>
+		<h2 class="text-5xl font-bold pb-12">My Projects</h1>
 		{
 			projects.map((data) => (
 				<Card class="md:grid md:grid-cols-2 gap-4">
@@ -97,7 +97,7 @@ const blogs = blogCollection
 	</Section>
 
 	<Section>
-		<h1 class="text-5xl font-bold pb-12">Blog</h1>
+		<h2 class="text-5xl font-bold pb-12">Blog</h1>
 		<div class="md:grid md:grid-cols-2 gap-4">
 			{
 				blogs.map((blog) => (
