@@ -4,16 +4,21 @@
 import "../styles/global.css";
 import "@fontsource/inter";
 import "@fontsource/nunito";
+import { SITE_DESCRIPTION, SITE_IMAGE, SITE_TITLE } from "../consts";
 
 export interface Props {
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
 	image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
+const {
+	title = SITE_TITLE,
+	description = SITE_DESCRIPTION,
+	image = SITE_IMAGE,
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->

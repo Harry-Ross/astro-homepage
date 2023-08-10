@@ -15,10 +15,14 @@ type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await post.render();
-const { title, date, updatedDate, thumbnail } = post.data;
+const { title, description, date, updatedDate, thumbnail } = post.data;
 ---
 
-<BaseLayout>
+<BaseLayout
+	title={`${title} - Harry Ross - Full Stack Developer`}
+	description={description}
+	image={thumbnail}
+>
 	<Section class="prose prose-invert max-w-2xl">
 		{thumbnail && <img width={720} height={360} src={thumbnail} alt="" />}
 		<h1 class="text-5xl">{title}</h1>

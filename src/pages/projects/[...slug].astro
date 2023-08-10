@@ -19,7 +19,7 @@ const { Content } = await project.render();
 const { name, date } = project.data;
 ---
 
-<BaseLayout>
+<BaseLayout title={`${name} - Harry Ross - Full Stack Developer`}>
 	<Section class="prose prose-invert max-w-2xl">
 		<h1 class="text-5xl">{name}</h1>
 		<FormattedDate date={date} />
