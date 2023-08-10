@@ -4,6 +4,7 @@
 import "../styles/global.css";
 import "@fontsource/inter";
 import "@fontsource/nunito";
+import { ViewTransitions } from 'astro:transitions';
 import { SITE_DESCRIPTION, SITE_IMAGE, SITE_TITLE } from "../consts";
 
 export interface Props {
@@ -49,3 +50,5 @@ const {
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<ViewTransitions />
