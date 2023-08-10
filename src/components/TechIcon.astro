@@ -1,0 +1,10 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+<Icon class="fill-gray-400 text-gray-400 mr-4" name={name} width="1.5rem" height="1.5rem" />
