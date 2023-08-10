@@ -1,7 +1,21 @@
 ---
+import { Icon } from "astro-icon";
+import SocialIcon from "./SocialIcon.astro";
+
 const today = new Date();
 ---
 
-<footer class="bg-zinc-900 p-6 mt-8 text-center">
-	{today.getFullYear()} Harry Ross. All rights reserved.
+<footer class="bg-zinc-900 p-6 text-center">
+	<div class="mx-auto mb-4 flex items-center justify-center">
+		<SocialIcon link="https://github.com/harry-ross" name="cib:github" />
+		<SocialIcon link="https://twitter.com/harryrossdev" name="cib:twitter" />
+		<SocialIcon
+			link="https://www.linkedin.com/in/harry-ross-37940617b/"
+			name="cib:linkedin-in"
+		/>
+		<SocialIcon link="mailto:hazross@hotmail.com" name="mi:email" />
+	</div>
+	<div>
+		{today.getFullYear()} Harry Ross. All rights reserved.
+	</div>
 </footer>
