@@ -3,14 +3,15 @@ import { Icon } from "astro-icon";
 
 export interface Props {
 	name: string;
+	description?: string;
 	link: string;
 	className?: string;
 }
 
-const { name, link, className } = Astro.props;
+const { name, link, description, className } = Astro.props;
 ---
 
-<a href={link}>
+<a href={link} aria-label={description || "Link to social site"}>
 	<Icon
 		optimise
 		class:list={[
