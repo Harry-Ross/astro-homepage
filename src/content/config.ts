@@ -3,6 +3,7 @@ import { defineCollection, z } from 'astro:content';
 const blog = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
+		draft: z.boolean().optional(),
 		title: z.string(),
 		description: z.string(),
 		date: z
