@@ -20,6 +20,7 @@ const projects = projectsCollection.map((project) => ({
 const blogCollection = await getCollection("blog");
 
 const blogs = blogCollection
+	.filter((item) => !item.data.draft)
 	.map((blog) => ({
 		title: blog.data.title,
 		description: blog.data.description,
