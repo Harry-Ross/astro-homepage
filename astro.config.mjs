@@ -8,5 +8,14 @@ import partytown from "@astrojs/partytown";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://harry.is-a.dev',
-  integrations: [mdx(), sitemap(), tailwind(), partytown()]
+  integrations: [
+    mdx(), 
+    sitemap(), 
+    tailwind(), 
+    partytown({ 
+      config: {
+        forward: ["dataLayer.push"]
+      }
+    })
+  ]
 });
