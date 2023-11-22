@@ -16,9 +16,7 @@ const posts = (await getCollection("blog"))
 				<a href={`/blog/${post.slug}/`}>
 					<article class="my-8">
 						<div class="my-4">
-							<h2 class="text-4xl mb-1 font-bold" transition:name="blog-title">
-								{post.data.title}
-							</h2>
+							<h2 class="text-4xl mb-1 font-bold">{post.data.title}</h2>
 							<FormattedDate class="italic" date={post.data.date} />
 						</div>
 						{post.data.thumbnail && (
