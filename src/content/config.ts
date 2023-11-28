@@ -31,6 +31,7 @@ const projects = defineCollection({
 			.or(z.date())
 			.transform((val) => new Date(val)),
 		thumbnail: z.string().optional(),
+		thumbnailVideo: z.string().optional(),
 	}),
 });
 

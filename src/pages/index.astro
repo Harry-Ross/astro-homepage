@@ -15,6 +15,7 @@ const projects = projectsCollection.map((project) => ({
 	description: project.data.description,
 	url: `/projects/${project.slug}`,
 	thumbnail: project.data.thumbnail,
+	thumbnailVideo: project.data.thumbnailVideo,
 }));
 
 const blogCollection = await getCollection("blog");
@@ -100,28 +101,34 @@ const icons = [
 		<h2 class="text-5xl font-bold pb-12">My Projects</h2>
 		{
 			projects.map((data) => (
-				<Card class="md:grid md:grid-cols-2 gap-4">
-					<div class="col-span-1">
-						<h2 class="py-2 text-4xl font-bold tracking-wider">{data.name}</h2>
-						<p class="py-4 text-xl">{data.description}</p>
-						<p class="text-lg">
-							<a class="underline" href={data.url}>
-								Read more
-							</a>
-						</p>
-					</div>
-					<div class="col-span-1">
-						{data.thumbnail && (
-							<Image
-								class="mx-auto rounded-xl"
-								src={data.thumbnail}
-								alt="Test"
-								width={500}
-								height={300}
-							/>
-						)}
-					</div>
-				</Card>
+				
+				<a href={data.url}>
+					<Card class="md:grid md:grid-cols-2 gap-4 justify-between">
+						<div class="col-span-1">
+							<h2 class="py-2 text-4xl font-bold tracking-wider hover:underline">{data.name}</h2>
+							<p class="py-4 text-xl">{data.description}</p>
+							<p class="text-lg text-neutral-300 hover:underline">
+									Read more
+							</p>
+						</div>
+						<div class="col-span-1">
+							{data.thumbnail && (
+								<Image
+									class="mx-auto rounded-xl"
+									src={data.thumbnail}
+									alt="Test"
+									width={500}
+									height={300}
+								/>
+							)}
+							{data.thumbnailVideo && (
+								<video autoplay muted loop playsinline class="ml-auto">
+									<source src={data.thumbnailVideo} type="video/mp4">
+								</video>
+							)}
+						</div>
+					</Card>
+				</a>
 			))
 		}
 	</Section>
@@ -131,15 +138,15 @@ const icons = [
 		<div class="md:grid md:grid-cols-2 gap-4">
 			{
 				blogs.map((blog) => (
-					<Card class="max-md:my-4">
-						<h2 class="py-2 text-4xl font-bold tracking-wider">{blog.title}</h2>
-						<p class="py-4 text-xl">{blog.description}</p>
-						<p class="text-lg">
-							<a class="underline" href={blog.url}>
-								Read more
-							</a>
-						</p>
-					</Card>
+					<a class="" href={blog.url} data-astro-prefetch>
+						<Card class="max-md:my-4">
+							<h2 class="py-2 text-4xl font-bold tracking-wider hover:underline">{blog.title}</h2>
+							<p class="py-4 text-xl">{blog.description}</p>
+							<p class="text-lg hover:underline text-neutral-300">
+									Read more
+							</p>
+						</Card>
+					</a>
 				))
 			}
 		</div>
