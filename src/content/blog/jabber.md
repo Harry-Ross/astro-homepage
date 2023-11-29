@@ -8,7 +8,7 @@ description: Jabber - a modern Twitch chat desktop app
 
 I realised that the current offerings for Twitch.tv chat clients were fairly poor, and that I had to make a new one. The current options are [Chatterino](https://chatterino.com/) and [Chatty](http://chatty.github.io/), which I believe are flawed programs for a variety of reasons.
 
-**Chatterino** - built in old technologies and UI frameworks (.NET), which limits potential for application
+**Chatterino** - built in old technologies and UI frameworks (C++), which limits potential for application
 
 ![Chatterino Screenshot](/images/jabber/chatterino.png)
 
