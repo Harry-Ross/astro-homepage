@@ -45,12 +45,18 @@ const icons = [
 	<script>
 		import { animate } from "motion";
 
-		const element = document.querySelectorAll("#intro-box");
+		document.addEventListener(
+			"astro:page-load",
+			() => {
+				const element = document.querySelectorAll("#intro-box");
 
-		animate(
-			element,
-			{ opacity: [0, 1], transform: "none" },
-			{ duration: 0.8, easing: "ease-out" }
+				animate(
+					element,
+					{ opacity: [0, 1], transform: "none" },
+					{ duration: 1.2, easing: "ease-out" }
+				);
+			},
+			{ once: false }
 		);
 	</script>
 	{
@@ -58,7 +64,7 @@ const icons = [
 	}
 	<section class="flex bg-gradient-to-b from-[#4F7D8B] md:h-[48rem] mb-12">
 		<div
-			class="md:mt-36 mt-2 flex max-md:flex-col md:flex-row mx-auto md:h-[26rem] w-[50rem] bg-[#1E1E1E] rounded-3xl border-[#9B9B9B] border-[1px] md:p-16 p-10 max-md:mx-6"
+			class="md:mt-36 mt-2 flex max-md:flex-col md:flex-row mx-auto md:h-[26rem] w-[50rem] bg-[#1E1E1E] rounded-3xl border-[#9B9B9B] border-[1px] md:p-16 p-10 max-md:mx-6 opacity-0"
 			id="intro-box"
 		>
 			<div class="md:w-64 flex flex-col justify-center">
@@ -102,15 +108,14 @@ const icons = [
 		<h2 class="text-5xl font-bold pb-12">My Projects</h2>
 		{
 			projects.map((data) => (
-				
 				<a href={data.url}>
 					<Card class="md:grid md:grid-cols-2 gap-4 justify-between">
 						<div class="col-span-1">
-							<h2 class="py-2 text-4xl font-bold tracking-wider hover:underline">{data.name}</h2>
+							<h2 class="py-2 text-4xl font-bold tracking-wider hover:underline">
+								{data.name}
+							</h2>
 							<p class="py-4 text-xl">{data.description}</p>
-							<p class="text-lg text-neutral-300 hover:underline">
-									Read more
-							</p>
+							<p class="text-lg text-neutral-300 hover:underline">Read more</p>
 						</div>
 						<div class="col-span-1">
 							{data.thumbnail && (
@@ -124,7 +129,7 @@ const icons = [
 							)}
 							{data.thumbnailVideo && (
 								<video autoplay muted loop playsinline class="ml-auto">
-									<source src={data.thumbnailVideo} type="video/mp4">
+									<source src={data.thumbnailVideo} type="video/mp4" />
 								</video>
 							)}
 						</div>
@@ -141,11 +146,11 @@ const icons = [
 				blogs.map((blog) => (
 					<a class="" href={blog.url} data-astro-prefetch>
 						<Card class="max-md:my-4">
-							<h2 class="py-2 text-4xl font-bold tracking-wider hover:underline">{blog.title}</h2>
+							<h2 class="py-2 text-4xl font-bold tracking-wider hover:underline">
+								{blog.title}
+							</h2>
 							<p class="py-4 text-xl">{blog.description}</p>
-							<p class="text-lg hover:underline text-neutral-300">
-									Read more
-							</p>
+							<p class="text-lg hover:underline text-neutral-300">Read more</p>
 						</Card>
 					</a>
 				))
@@ -155,6 +160,13 @@ const icons = [
 
 	<Section>
 		<h2 class="text-5xl font-bold pb-12">About Me</h2>
-		<p class="text-lg">Hi there, I'm Harry - a full stack .NET and JavaScript developer. I'm a Software Engineer at <a class="underline" href="https://www.ssw.com.au/">ssw.com.au</a> and SSW TV <a class="underline" href="https://tv.ssw.com.au/">tv.ssw.com</a>.</p>
+		<p class="text-lg">
+			Hi there, I'm Harry - a full stack .NET and JavaScript developer. I'm a
+			Software Engineer at <a class="underline" href="https://www.ssw.com.au/"
+				>ssw.com.au</a
+			> and SSW TV <a class="underline" href="https://tv.ssw.com.au/"
+				>tv.ssw.com</a
+			>.
+		</p>
 	</Section>
 </BaseLayout>
