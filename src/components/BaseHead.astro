@@ -4,7 +4,7 @@
 import "../styles/global.css";
 import "@fontsource/inter";
 import "@fontsource/nunito";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 import { SITE_DESCRIPTION, SITE_IMAGE, SITE_TITLE } from "../consts";
 
 export interface Props {
@@ -52,13 +52,22 @@ const {
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- Google tag (gtag.js) -->
-<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-G9S3RYYR81"></script>
+<script
+	type="text/partytown"
+	src="https://www.googletagmanager.com/gtag/js?id=G-G9S3RYYR81"></script>
 <script type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("js", new Date());
 
-  gtag('config', 'G-G9S3RYYR81');
+	gtag("config", "G-G9S3RYYR81");
 </script>
+
+<script
+	defer
+	src="https://analytics.us.umami.is/script.js"
+	data-website-id="30553952-d8ca-4a69-9b90-3ef11dd3baa0"></script>
 
 <ViewTransitions />
