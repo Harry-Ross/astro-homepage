@@ -109,8 +109,8 @@ const icons = [
 		{
 			projects.map((data) => (
 				<a href={data.url}>
-					<Card class="md:grid md:grid-cols-2 gap-4 justify-between">
-						<div class="col-span-1">
+					<Card class="md:grid md:grid-cols-2 gap-4 justify-between mb-4">
+						<div class="col-span-1 my-auto">
 							<h2 class="py-2 text-4xl font-bold tracking-wider hover:underline">
 								{data.name}
 							</h2>
@@ -120,7 +120,7 @@ const icons = [
 						<div class="col-span-1">
 							{data.thumbnail && (
 								<Image
-									class="mx-auto rounded-xl"
+									class="ml-auto rounded-xl"
 									src={data.thumbnail}
 									alt="Test"
 									width={500}
@@ -163,7 +163,8 @@ const icons = [
 		<p class="text-lg">
 			Hi there, I'm Harry - a full stack .NET and JavaScript developer. I'm a
 			Full Stack Developer at <a class="underline" href="https://reachout.com/"
-				>ReachOut</a>
+				>ReachOut</a
+			>
 		</p>
 	</Section>
 </BaseLayout>
