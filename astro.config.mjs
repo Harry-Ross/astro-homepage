@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 
-import partytown from "@astrojs/partytown";
+// import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,11 +14,11 @@ export default defineConfig({
     mdx(), 
     sitemap(), 
     tailwind(), 
-    partytown({ 
-      config: {
-        forward: ["dataLayer.push"]
-      }
-    }),
+    // partytown({ 
+    //   config: {
+    //     forward: ["dataLayer.push"]
+    //   }
+    // }),
     icon()
   ]
 });
