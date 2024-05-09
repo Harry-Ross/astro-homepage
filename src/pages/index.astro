@@ -107,7 +107,7 @@ const icons = [
 	<Section>
 		<h2 class="text-5xl font-bold pb-12">My Projects</h2>
 		{
-			projects.map((data) => (
+			projects.map((data, index) => (
 				<a href={data.url}>
 					<Card class="md:grid md:grid-cols-2 gap-4 justify-between mb-4">
 						<div class="col-span-1 my-auto">
@@ -125,6 +125,7 @@ const icons = [
 									alt="Test"
 									width={500}
 									height={300}
+									loading={index === 0 ? "eager" : "lazy"}
 								/>
 							)}
 							{data.thumbnailVideo && (
