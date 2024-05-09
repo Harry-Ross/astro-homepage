@@ -16,7 +16,7 @@ You can find the project on GitHub at [https://github.com/Harry-Ross/llama-chat-
 
 ## Features 
 
-* **Local LLM** - run the LLM locally on your machine using `node-llama-cpp`.
+* **Local LLM** - run the LLM locally on your machine using [`llama.cpp`](https://github.com/ggerganov/llama.cpp).
 * **Local storage** - messages are stored locally in SQLite so you don't have to worry about cloud storage. 
 * **Conversations** - there are separate conversations that can be created if you want a new context for the LLM.
 * **Theming** - there is a dark/light mode toggle that can be used to change the theme.
