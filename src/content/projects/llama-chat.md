@@ -3,10 +3,10 @@ name: Llama Chat
 subtitle: A local LLM Next.js experiment using Llama 2
 date: "2024-05-09"
 description: Llama Chat is a Next.js app router-based experiment that uses Llama 2 to run an LLM locally. Alongside this, it has local storage of messages and conversations using SQLite. 
-thumbnail: "/images/llama-chat/screenshot.png"
+thumbnail: "../../../public/images/llama-chat/screenshot.png"
 ---
 
-![Figure: Llama Chat screenshot](/images/llama-chat/screenshot.png)
+![Figure: Llama Chat screenshot](../../../public/images/llama-chat/screenshot.png)
 
 Llama Chat is a Next.js experiment using Llama 2 that allows you to run the LLM locally, with local storage of messages in SQLite. It uses ShadCN UI for the componenets used in the chat interface. It was born from the idea that I wanted a way to run an LLM locally without having to use ChatGPT or something similar. 
 
