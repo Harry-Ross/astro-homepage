@@ -22,7 +22,7 @@ const blog = defineCollection({
 });
 
 const projects = defineCollection({
-	schema: z.object({
+	schema: ({ image }) => z.object({
 		name: z.string(),
 		subtitle: z.string().optional(),
 		description: z.string(),
@@ -30,7 +30,7 @@ const projects = defineCollection({
 			.string()
 			.or(z.date())
 			.transform((val) => new Date(val)),
-		thumbnail: z.string().optional(),
+		thumbnail: image().optional(),
 		thumbnailVideo: z.string().optional(),
 	}),
 });

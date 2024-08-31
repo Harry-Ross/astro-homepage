@@ -107,10 +107,10 @@ const icons = [
 	<Section>
 		<h2 class="text-5xl font-bold pb-12">My Projects</h2>
 		{
-			projects.map((data) => (
+			projects.map((data, index) => (
 				<a href={data.url}>
-					<Card class="md:grid md:grid-cols-2 gap-4 justify-between">
-						<div class="col-span-1">
+					<Card class="md:grid md:grid-cols-2 gap-4 justify-between mb-4">
+						<div class="col-span-1 my-auto">
 							<h2 class="py-2 text-4xl font-bold tracking-wider hover:underline">
 								{data.name}
 							</h2>
@@ -120,11 +120,12 @@ const icons = [
 						<div class="col-span-1">
 							{data.thumbnail && (
 								<Image
-									class="mx-auto rounded-xl"
+									class="ml-auto rounded-xl"
 									src={data.thumbnail}
 									alt="Test"
 									width={500}
 									height={300}
+									loading={index === 0 ? "eager" : "lazy"}
 								/>
 							)}
 							{data.thumbnailVideo && (
@@ -162,11 +163,9 @@ const icons = [
 		<h2 class="text-5xl font-bold pb-12">About Me</h2>
 		<p class="text-lg">
 			Hi there, I'm Harry - a full stack .NET and JavaScript developer. I'm a
-			Software Engineer at <a class="underline" href="https://www.ssw.com.au/"
-				>ssw.com.au</a
-			> and SSW TV <a class="underline" href="https://tv.ssw.com.au/"
-				>tv.ssw.com</a
-			>.
+			Full Stack Developer at <a class="underline" href="https://reachout.com/"
+				>ReachOut</a
+			>
 		</p>
 	</Section>
 </BaseLayout>
