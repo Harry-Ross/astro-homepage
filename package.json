@@ -36,5 +36,6 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.12",
     "typescript": "^5.5.4"
-  }
+  },
+  "packageManager": "pnpm@9.9.0"
 }
