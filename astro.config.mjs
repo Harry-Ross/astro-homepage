@@ -1,24 +1,26 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
+import tailwindcss from "@tailwindcss/vite";
 
 // import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://harry.is-a.dev',
+  site: "https://harry.is-a.dev",
   prefetch: true,
   integrations: [
-    mdx(), 
-    sitemap(), 
-    tailwind(), 
-    // partytown({ 
+    mdx(),
+    sitemap(),
+    // partytown({
     //   config: {
     //     forward: ["dataLayer.push"]
     //   }
     // }),
-    icon()
-  ]
+    icon(),
+  ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

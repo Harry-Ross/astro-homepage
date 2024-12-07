@@ -5,11 +5,11 @@ import FormattedDate from "../../components/FormattedDate.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-	const projects = await getCollection("projects");
-	return projects.map((project) => ({
-		params: { slug: project.slug },
-		props: project,
-	}));
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: project,
+  }));
 }
 type Props = CollectionEntry<"projects">;
 
@@ -20,10 +20,10 @@ const { name, date } = project.data;
 ---
 
 <BaseLayout title={`${name} - Harry Ross - Full Stack Developer`}>
-	<Section class="prose prose-invert max-w-2xl">
-		<h1 class="text-5xl">{name}</h1>
-		<FormattedDate date={date} />
-		<hr />
-		<Content />
-	</Section>
+  <Section class="prose prose-invert max-w-2xl">
+    <h1 class="text-5xl">{name}</h1>
+    <FormattedDate date={date} />
+    <hr />
+    <Content />
+  </Section>
 </BaseLayout>

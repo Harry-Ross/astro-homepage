@@ -8,17 +8,17 @@ import { ViewTransitions } from "astro:transitions";
 import { SITE_DESCRIPTION, SITE_IMAGE, SITE_TITLE } from "../consts";
 
 export interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
-	image?: string | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
+  image?: string | undefined;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const {
-	title = SITE_TITLE,
-	description = SITE_DESCRIPTION,
-	image = SITE_IMAGE,
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  image = SITE_IMAGE,
 } = Astro.props;
 ---
 
@@ -66,9 +66,9 @@ const {
 </script> -->
 
 <script
-	defer
-	is:inline
-	src="https://analytics.us.umami.is/script.js"
-	data-website-id="30553952-d8ca-4a69-9b90-3ef11dd3baa0"></script>
+  defer
+  is:inline
+  src="https://analytics.us.umami.is/script.js"
+  data-website-id="30553952-d8ca-4a69-9b90-3ef11dd3baa0"></script>
 
 <ViewTransitions />

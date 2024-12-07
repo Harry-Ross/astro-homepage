@@ -2,23 +2,23 @@
 import { Icon } from "astro-icon/components";
 
 export interface Props {
-	name: string;
-	description?: string;
-	link: string;
-	className?: string;
+  name: string;
+  description?: string;
+  link: string;
+  className?: string;
 }
 
 const { name, link, description, className } = Astro.props;
 ---
 
 <a href={link} aria-label={description || "Link to social site"}>
-	<Icon
-		class:list={[
-			"bg-zinc-600 p-2 mx-2 rounded-2xl hover:bg-zinc-700",
-			className,
-		]}
-		name={name}
-		height="3rem"
-		width="3rem"
-	/>
+  <Icon
+    class:list={[
+      "bg-zinc-600 p-2 mx-2 rounded-2xl hover:bg-zinc-700",
+      className,
+    ]}
+    name={name}
+    height="3rem"
+    width="3rem"
+  />
 </a>

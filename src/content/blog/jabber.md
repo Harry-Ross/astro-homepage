@@ -4,6 +4,7 @@ tags: [projects, code, javascript, nodejs, electron, html]
 date: 2021-01-11
 description: Jabber - a modern Twitch chat desktop app
 ---
+
 # Jabber - a modern Twitch chat desktop application
 
 I realised that the current offerings for Twitch.tv chat clients were fairly poor, and that I had to make a new one. The current options are [Chatterino](https://chatterino.com/) and [Chatty](http://chatty.github.io/), which I believe are flawed programs for a variety of reasons.
@@ -17,7 +18,8 @@ I realised that the current offerings for Twitch.tv chat clients were fairly poo
 ![Chatty Screenshot](/images/jabber/chatty.png)
 
 ## My software
-I have started building it in ElectronJS combined with EJS and SCSS, which also allows for the software to be used in the browser too if needed. Currently I have a basic prototype that interprets the Twitch IRC data by connecting to their websockets server, shown below. ([Documented here](https://dev.twitch.tv/docs/irc)) 
+
+I have started building it in ElectronJS combined with EJS and SCSS, which also allows for the software to be used in the browser too if needed. Currently I have a basic prototype that interprets the Twitch IRC data by connecting to their websockets server, shown below. ([Documented here](https://dev.twitch.tv/docs/irc))
 
 ![Jabber prototype screenshot](/images/jabber/jabber-proto.png)
 Currently the styling is a little janky, and I am working on fixing it.
