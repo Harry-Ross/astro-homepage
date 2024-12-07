@@ -1,7 +1,9 @@
+import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
   // Type-check frontmatter using a schema
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
     draft: z.boolean().optional(),
     title: z.string(),
@@ -20,6 +22,7 @@ const blog = defineCollection({
 });
 
 const projects = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
   schema: ({ image }) =>
     z.object({
       name: z.string(),

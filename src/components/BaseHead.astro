@@ -4,7 +4,7 @@
 import "../styles/global.css";
 import "@fontsource/inter";
 import "@fontsource/nunito";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { SITE_DESCRIPTION, SITE_IMAGE, SITE_TITLE } from "../consts";
 
 export interface Props {
@@ -71,4 +71,4 @@ const {
   src="https://analytics.us.umami.is/script.js"
   data-website-id="30553952-d8ca-4a69-9b90-3ef11dd3baa0"></script>
 
-<ViewTransitions />
+<ClientRouter />

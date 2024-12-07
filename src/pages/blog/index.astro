@@ -13,7 +13,7 @@ const posts = (await getCollection("blog"))
   <Section>
     {
       posts.map((post) => (
-        <a href={`/blog/${post.slug}/`}>
+        <a href={`/blog/${post.id}/`}>
           <article class="my-8">
             <div class="my-4">
               <h2 class="text-4xl mb-1 font-bold">{post.data.title}</h2>
