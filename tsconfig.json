@@ -5,6 +5,7 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
+    "verbatimModuleSyntax": true,
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
