@@ -2,6 +2,10 @@
   "name": "astro-homepage",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": "22.x",
+    "pnpm": "10.x"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
