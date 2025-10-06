@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.0.1",
-    "@astrojs/partytown": "^2.1.2",
-    "@astrojs/rss": "^4.0.10",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/mdx": "^4.3.6",
+    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/ts-plugin": "^1.10.4",
     "@fontsource/inter": "^5.0.17",
     "@fontsource/nunito": "^5.0.17",
@@ -25,19 +25,19 @@
     "@iconify-json/mdi": "^1.1.66",
     "@iconify-json/mi": "^1.1.8",
     "@iconify-json/uil": "^1.1.8",
-    "@tailwindcss/vite": "^4.0.9",
-    "astro": "^5.0.3",
-    "astro-icon": "^1.1.1",
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.1",
+    "astro-icon": "^1.1.5",
     "motion": "^10.17.0",
-    "sharp": "^0.33.3",
-    "tailwind-merge": "^2.2.2",
-    "tailwindcss": "4.0.0-beta.6"
+    "sharp": "^0.34.4",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
-    "prettier": "^3.4.2",
+    "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.18.0+sha512.e804f889f1cecc40d572db084eec3e4881739f8dec69c0ff10d2d1beff9a4e309383ba27b5b750059d7f4c149535b6cd0d2cb1ed3aeb739239a4284a68f40cfa"
 }

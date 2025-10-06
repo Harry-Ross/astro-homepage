@@ -10,6 +10,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://harry.is-a.dev",
   prefetch: true,
+  output: "static",
   integrations: [
     mdx(),
     sitemap(),
