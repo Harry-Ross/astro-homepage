@@ -48,13 +48,15 @@ const icons = [
     document.addEventListener(
       "astro:page-load",
       () => {
-        const element = document.querySelectorAll("#intro-box");
+        const element = document.querySelector("#intro-box");
 
-        animate(
-          element,
-          { opacity: [0, 1], transform: "none" },
-          { duration: 1.2, easing: "ease-out" },
-        );
+        if (element) {
+          animate(
+            element,
+            { opacity: [0, 1], transform: "none" },
+            { duration: 1.2, easing: "ease-out" },
+          );
+        }
       },
       { once: false },
     );
@@ -108,7 +110,7 @@ const icons = [
     <h2 class="text-5xl font-bold pb-12">My Projects</h2>
     {
       projects.map((data, index) => (
-        <a href={data.url}>
+        <a href={data.url} data-astro-prefetch>
           <Card class="md:grid md:grid-cols-2 gap-4 justify-between mb-4">
             <div class="col-span-1 my-auto">
               <h2 class="py-2 text-4xl font-bold tracking-wider hover:underline">
@@ -129,7 +131,7 @@ const icons = [
                 />
               )}
               {data.thumbnailVideo && (
-                <video autoplay muted loop playsinline class="ml-auto">
+                <video autoplay muted loop playsinline loading="lazy" class="ml-auto">
                   <source src={data.thumbnailVideo} type="video/mp4" />
                 </video>
               )}

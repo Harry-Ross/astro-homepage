@@ -10,12 +10,14 @@ export async function getStaticPaths() {
     .filter((post) => !post.data.draft)
     .map((post) => ({
       params: { slug: post.id },
-      props: post,
+      props: { post },
     }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = {
+  post: CollectionEntry<"blog">;
+};
 
-const post = Astro.props;
+const { post } = Astro.props;
 const { Content } = await render(post);
 const { title, description, date, updatedDate, thumbnail } = post.data;
 ---
@@ -26,7 +28,7 @@ const { title, description, date, updatedDate, thumbnail } = post.data;
   image={thumbnail}
 >
   <Section class="prose prose-invert max-w-2xl">
-    {thumbnail && <img width={720} height={360} src={thumbnail} alt="" />}
+    {thumbnail && <img width={720} height={360} src={thumbnail} alt="" loading="eager" />}
     <h1 class="text-5xl">{title}</h1>
     <FormattedDate date={date} />
     {

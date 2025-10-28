@@ -8,12 +8,14 @@ export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((project) => ({
     params: { slug: project.id },
-    props: project,
+    props: { project },
   }));
 }
-type Props = CollectionEntry<"projects">;
+type Props = {
+  project: CollectionEntry<"projects">;
+};
 
-const project = Astro.props;
+const { project } = Astro.props;
 const { Content } = await render(project);
 
 const { name, date } = project.data;
