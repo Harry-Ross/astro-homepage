@@ -12,8 +12,8 @@ const posts = (await getCollection("blog"))
 <BaseLayout title="Blog - Harry Ross - Full Stack Developer">
   <Section>
     {
-      posts.map((post) => (
-        <a href={`/blog/${post.id}/`}>
+      posts.map((post, index) => (
+        <a href={`/blog/${post.id}/`} data-astro-prefetch>
           <article class="my-8">
             <div class="my-4">
               <h2 class="text-4xl mb-1 font-bold">{post.data.title}</h2>
@@ -26,6 +26,7 @@ const posts = (await getCollection("blog"))
                 height={360}
                 src={post.data.thumbnail}
                 alt=""
+                loading={index === 0 ? "eager" : "lazy"}
               />
             )}
             <p class="text-xl my-4">{post.data.description}</p>

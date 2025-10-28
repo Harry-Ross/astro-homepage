@@ -28,7 +28,7 @@ const { title, description, date, updatedDate, thumbnail } = post.data;
   image={thumbnail}
 >
   <Section class="prose prose-invert max-w-2xl">
-    {thumbnail && <img width={720} height={360} src={thumbnail} alt="" />}
+    {thumbnail && <img width={720} height={360} src={thumbnail} alt="" loading="eager" />}
     <h1 class="text-5xl">{title}</h1>
     <FormattedDate date={date} />
     {

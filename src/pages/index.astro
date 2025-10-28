@@ -48,13 +48,15 @@ const icons = [
     document.addEventListener(
       "astro:page-load",
       () => {
-        const element = document.querySelectorAll("#intro-box");
+        const element = document.querySelector("#intro-box");
 
-        animate(
-          element,
-          { opacity: [0, 1], transform: "none" },
-          { duration: 1.2, easing: "ease-out" },
-        );
+        if (element) {
+          animate(
+            element,
+            { opacity: [0, 1], transform: "none" },
+            { duration: 1.2, easing: "ease-out" },
+          );
+        }
       },
       { once: false },
     );
