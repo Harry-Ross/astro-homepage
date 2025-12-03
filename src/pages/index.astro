@@ -43,7 +43,7 @@ const icons = [
 
 <BaseLayout>
   <script>
-    import { animate } from "motion";
+    import { animate } from "motion/mini";
 
     document.addEventListener(
       "astro:page-load",
@@ -53,7 +53,7 @@ const icons = [
         animate(
           element,
           { opacity: [0, 1], transform: "none" },
-          { duration: 1.2, easing: "ease-out" },
+          { duration: 1.2, ease: "easeOut" },
         );
       },
       { once: false },
