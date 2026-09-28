@@ -39,9 +39,10 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
+    "node-gyp": "^13.0.2",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
+  "packageManager": "pnpm@12.8.0+sha512.3916e9559cdfbddf7dc921e8999076584425161de773f6cabf7f47467f0d9452bfa89a689ec245753ad3d55abcb3cf706e667ac12062dbc9c625fbd72bca20dc"
 }
